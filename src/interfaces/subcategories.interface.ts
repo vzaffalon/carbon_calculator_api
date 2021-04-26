@@ -1,5 +1,3 @@
 import { SubCategory } from "./subcategory.interface";
 
-export interface SubCategories {
-  [key: number]: SubCategory;
-}
+export interface SubCategories extends Array<SubCategory> {}

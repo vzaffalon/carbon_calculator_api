@@ -1,5 +1,3 @@
 import { Category } from "./category.interface";
 
-export interface Categories {
-  [key: number]: Category;
-}
+export interface Categories extends Array<Category> {}
