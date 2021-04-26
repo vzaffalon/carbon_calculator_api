@@ -1,42 +1,7 @@
-/**
- * Data Model Interfaces
- */
- import { BaseCategory, Category } from "../interfaces/category.interface";
- import { Categories } from "../interfaces/categories.interface";
+import { Category } from "../interfaces/category.interface";
+import { Categories } from "../interfaces/categories.interface";
+import CategoriesStore from "../store/categories.store";
 
+ export const findAll = async (): Promise<Category[]> => Object.values(CategoriesStore);
 
-/**
- * In-Memory Store
- */
-
- let categories: Categories = {
-    1: {
-      id: 1,
-      name: "Housing",
-    },
-    2: {
-      id: 2,
-      name: "Travel",
-    },
-    3: {
-      id: 3,
-      name: "Food",
-    },
-    4: {
-        id: 4,
-        name: "Products",
-    },
-    5: {
-        id: 5,
-        name: "Services",
-    }
-  };
-
-
-/**
- * Service Methods
- */
-
- export const findAll = async (): Promise<Category[]> => Object.values(categories);
-
- export const find = async (id: number): Promise<Category> => categories[id];
+ export const find = async (id: number): Promise<Category> => CategoriesStore[id];

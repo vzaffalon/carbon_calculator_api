@@ -1,12 +1,11 @@
 /**
  * Required External Modules and Interfaces
  */
- import express, { Request, Response } from "express";
- import * as CategoriesService from "../services/categories.service";
- import { BaseCategory, Category } from "../services/category.interface";
+ import express from "express";
 
- import { index } from "../controllers/categories_controller"
- import { index } from "../controllers/emission_controller"
+ import * as CategoriesController from "../controllers/categories_controller"
+ import * as SubCategoriesController from "../controllers/subcategories_controller"
+ import * as EmissionsController from "../controllers/emission_controller"
 
 
 /**
@@ -17,32 +16,9 @@
 /**
  * Controller Definitions
  */
-
-
 // GET /CATEGORIES
-router.get("/", async (req: Request, res: Response) => {
-    try {
-      const items: Item[] = await ItemService.findAll();
-  
-      res.status(200).send(items);
-    } catch (e) {
-      res.status(500).send(e.message);
-    }
-});
-
-
-// GET CATEGORIES/:ID/SUBCATEGORIES
-router.get("/:id", );
-
+router.get("/categories", CategoriesController.index);
+// GET /SUBCATEGORIES
+router.get("/subcategories", SubCategoriesController.index);
 // POST  /emissions
-router.post("/", async (req: Request, res: Response) => {
-    try {
-      const item: BaseItem = req.body;
-  
-      const newItem = await ItemService.create(item);
-  
-      res.status(201).json(newItem);
-    } catch (e) {
-      res.status(500).send(e.message);
-    }
-});
+router.post("/emissions", EmissionsController.create);
