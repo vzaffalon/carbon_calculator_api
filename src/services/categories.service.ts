@@ -1,4 +1,4 @@
-import { Category } from "../interfaces/category.interface";
+import { Category } from "../interfaces/category/category.interface";
 import CategoriesStore from "../store/categories.store";
 
  export const findAll = async (): Promise<Category[]> => CategoriesStore;

@@ -1,7 +1,7 @@
 /**
  * Data Model Interfaces
  */
-import { Categories } from "../interfaces/categories.interface";
+import { Categories } from "../interfaces/category/categories.interface";
 import { categories as seed } from "./seed";
 
 /**

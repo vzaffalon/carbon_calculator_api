@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import * as EmissionsService from "../services/emissions.service";
-import { EmissionsCreation } from "../interfaces/emissions.creation.interface"
+import { EmissionsCreation } from "../interfaces/emission/emissions.creation.interface"
 
 async function calculateTotalEmission (req: Request, res: Response){
     try {

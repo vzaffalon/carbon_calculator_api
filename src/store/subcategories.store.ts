@@ -1,7 +1,7 @@
 /**
  * Data Model Interfaces
  */
-  import { SubCategories } from "../interfaces/subcategories.interface";
+  import { SubCategories } from "../interfaces/subcategory/subcategories.interface";
   import { subcategories as seed } from "./seed";
 
  

@@ -1,4 +1,4 @@
-import { Emissions } from "../interfaces/emissions.interface";
+import { Emissions } from "../interfaces/emission/emissions.interface";
 
 let emissions: Emissions = []
 

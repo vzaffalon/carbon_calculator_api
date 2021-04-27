@@ -1,5 +1,5 @@
-import { SubCategory } from "../interfaces/subcategory.interface";
-import { SubCategories } from "../interfaces/subcategories.interface";
+import { SubCategory } from "../interfaces/subcategory/subcategory.interface";
+import { SubCategories } from "../interfaces/subcategory/subcategories.interface";
 import SubCategoriesStore from "../store/subcategories.store";
 
  export const findAll = async (): Promise<SubCategory[]> => SubCategoriesStore;

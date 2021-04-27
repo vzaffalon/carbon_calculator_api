@@ -1,5 +1,5 @@
-import { Categories } from "../interfaces/categories.interface";
-import { SubCategories } from "../interfaces/subcategories.interface";
+import { Categories } from "../interfaces/category/categories.interface";
+import { SubCategories } from "../interfaces/subcategory/subcategories.interface";
 
 let categories: Categories = [
     {

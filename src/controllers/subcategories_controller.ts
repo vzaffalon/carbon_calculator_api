@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 import * as SubCategoriesService from "../services/subcategories.service";
-import { SubCategory } from "../interfaces/subcategory.interface";
+import { SubCategory } from "../interfaces/subcategory/subcategory.interface";
 
 async function index(req: Request, res: Response){
     try {
