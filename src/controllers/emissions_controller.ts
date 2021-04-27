@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 import * as EmissionsService from "../services/emissions.service";
-import { Emissions } from "../interfaces/emissions.interface"
+import { EmissionsCreation } from "../interfaces/emissions.creation.interface"
 
-async function create (req: Request, res: Response){
+async function calculateTotalEmission (req: Request, res: Response){
     try {
-      const emissions: Emissions = req.body;
+      const emissions: EmissionsCreation = req.body;
   
-      const newItem = await EmissionsService.create(emissions);
+      const newItem = await EmissionsService.calculateTotalEmission(emissions);
   
       res.status(201).json(newItem);
     } catch (e) {
@@ -14,6 +14,19 @@ async function create (req: Request, res: Response){
     }
 }
 
+async function calculateSubcategoryEmission (req: Request, res: Response){
+  try {
+    const emissions: EmissionsCreation = req.body;
+
+    const newItem = await EmissionsService.calculateSubcategoryEmission(emissions);
+
+    res.status(201).json(newItem);
+  } catch (e) {
+    res.status(500).send(e.message);
+  }
+}
+
 export {
-    create
+  calculateTotalEmission,
+  calculateSubcategoryEmission
 }

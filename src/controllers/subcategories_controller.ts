@@ -4,8 +4,8 @@ import { SubCategory } from "../interfaces/subcategory.interface";
 
 async function index(req: Request, res: Response){
     try {
-        const category_id: number = parseInt(req.params.category_id, 0);
-        const subcategories: SubCategory[] = await SubCategoriesService.findAll(category_id);
+        const category_id: number = parseInt(req.params.id, 10);
+        const subcategories: SubCategory[] = await SubCategoriesService.findByCategory(category_id);
 
         res.status(200).send(subcategories);
     } catch (e) {
