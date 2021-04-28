@@ -9,40 +9,41 @@ For the purpose of simplification the projects uses a in memory database created
 
 ### Model description
 
-Category: Definition of carbon emission category
-Subcategory: Definition of category subcategory containing the data for Emission Factors and Measures
-Emissions: Helper model to calculate total_emission from subcategories use and emission factors
+- Category: Definition of carbon emission category
+- Subcategory: Definition of category subcategory containing the data for Emission Factors and Measures
+- Emissions: Helper model to calculate total_emission from subcategories use and emission factors
 
-Formulas used by Category:
-Housing:
-    * Subcategories:
-        * Electricity : use (kWh/yr) * EF (kg CO2e/kWh) = emissions (kg CO2e/yr)
-        * Natural Gas : use (therms/yr) * EF (kg CO2e/therms) = emissions (kg CO2e/yr)
-        * Fuel Oil: use (litres/yr) * EF (kg CO2e/litre) = emissions (kg CO2e/yr)
-        * LPG : use (litres/yr) * EF (kg CO2e/litre) = emissions (kg CO2e/yr)
-        * Waste : use (kg/week) * 52 * EF (kg CO2e/kg) = emissions (kg CO2e/yr)
-        * Water : use (litres/day) * 365 * EF (kg CO2e/kWh) = emissions (kg CO2e/yr)
+### Formulas used by each Category
 
-Travel:
-    * Subcategories:
-        * Vehicle : distance (km/yr) /*EF (kg CO2e/km) = emissions (kg CO2e/yr)
-        * Bus : distance (km/yr) * EF (kg CO2e/km) = emissions (kg CO2e/yr)
-        * Metro: distance (km/yr) * EF (kg CO2e/km) = emissions (kg CO2e/yr)
-        * Taxi: distance (km/yr) * EF (kg CO2e/km) = emissions (kg CO2e/yr)
-        * Rail: distance (km/yr) * EF (kg CO2e/km) = emissions (kg CO2e/yr)
-        * Flying : distance (km/yr)* 1.09 * EF (kg CO2e/km) = emissions (kg CO2e/yr)
+- Housing:
+    - Subcategories:
+        -  Electricity : use (kWh/yr) * EF (kg CO2e/kWh) = emissions (kg CO2e/yr)
+        -  Natural Gas : use (therms/yr) * EF (kg CO2e/therms) = emissions (kg CO2e/yr)
+        -  Fuel Oil: use (litres/yr) * EF (kg CO2e/litre) = emissions (kg CO2e/yr)
+        -  LPG : use (litres/yr) * EF (kg CO2e/litre) = emissions (kg CO2e/yr)
+        -  Waste : use (kg/week) * 52 * EF (kg CO2e/kg) = emissions (kg CO2e/yr)
+        -  Water : use (litres/day) * 365 * EF (kg CO2e/kWh) = emissions (kg CO2e/yr)
 
-Food:
-    * Subcategories:
-        * Red meat: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
-        * White meat: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
-        * Dairy: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
-        * Cereals: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
-        * Vegetables: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
-        * Fruit: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
-        * Oils: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
-        * Snacks: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
-         *Drinks: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
+- Travel:
+    -  Subcategories:
+        -  Vehicle : distance (km/yr) /*EF (kg CO2e/km) = emissions (kg CO2e/yr)
+        -  Bus : distance (km/yr) * EF (kg CO2e/km) = emissions (kg CO2e/yr)
+        -  Metro: distance (km/yr) * EF (kg CO2e/km) = emissions (kg CO2e/yr)
+        -  Taxi: distance (km/yr) * EF (kg CO2e/km) = emissions (kg CO2e/yr)
+        -  Rail: distance (km/yr) * EF (kg CO2e/km) = emissions (kg CO2e/yr)
+        -  Flying : distance (km/yr)* 1.09 * EF (kg CO2e/km) = emissions (kg CO2e/yr)
+
+- Food:
+    -  Subcategories:
+        -  Red meat: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
+        -  White meat: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
+        -  Dairy: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
+        -  Cereals: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
+        -  Vegetables: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
+        -  Fruit: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
+        -  Oils: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
+        -  Snacks: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
+        - Drinks: consumption (kCal/day)*365*EF (kg CO2e/kCal) = emissions (kg CO2e/yr)
 
 Reference: http://shrinkthatfootprint.com/calculate-your-carbon-footprint
 
@@ -219,7 +220,7 @@ Success return example:
                 "name": "Food",
                 "us_average": 1300
             },
-            "total_emission": 0,
+            "total_emission": 557,
             "total_emission_measure": "kg CO2e/yr"
         }
     ]
