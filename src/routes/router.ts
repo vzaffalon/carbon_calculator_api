@@ -17,4 +17,4 @@
  */
 router.get("/categories/:id/subcategories", SubCategoriesController.index);
 router.get("/categories", CategoriesController.index);
-router.get("/calculate_total_emission", EmissionsController.calculateTotalEmission);
+router.post("/calculate_total_emission", EmissionsController.calculateTotalEmission);
