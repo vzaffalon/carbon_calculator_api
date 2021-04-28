@@ -21,7 +21,7 @@ let categories: Categories = [
 
  //1 pound / megawatt hour = 0.00045359237 kilograms / kilowatt hour
  const EnergyKgConverter = 0.00045359237
- const btuThermesConverter = 0.0000100024 
+ const btuThermesConverter = 0.00100024 
  const gallonToLiterConverter = 3.78541
  const mileToKm = 1.60934;
 

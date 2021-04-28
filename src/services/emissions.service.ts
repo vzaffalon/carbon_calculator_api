@@ -23,7 +23,7 @@ export const calculateEmissions = async (emissions: EmissionsCreation): Promise<
         if (category_changed) {
             category_emissions.push(last_category_emission)
             total_emission = total_emission + total_category_emission
-            total_category_emission = 0
+            total_category_emission = (emission.use * subcategory.ef)
         } else {
             total_category_emission = total_category_emission + (emission.use * subcategory.ef)
         }
