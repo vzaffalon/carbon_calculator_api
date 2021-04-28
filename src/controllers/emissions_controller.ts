@@ -6,7 +6,7 @@ async function calculateTotalEmission (req: Request, res: Response){
     try {
       const emissions: EmissionsCreation = req.body;
   
-      const newItem = await EmissionsService.calculateTotalEmission(emissions);
+      const newItem = await EmissionsService.calculateEmissions(emissions);
   
       res.status(201).json(newItem);
     } catch (e) {
@@ -14,19 +14,6 @@ async function calculateTotalEmission (req: Request, res: Response){
     }
 }
 
-async function calculateSubcategoryEmission (req: Request, res: Response){
-  try {
-    const emissions: EmissionsCreation = req.body;
-
-    const newItem = await EmissionsService.calculateSubcategoryEmission(emissions);
-
-    res.status(201).json(newItem);
-  } catch (e) {
-    res.status(500).send(e.message);
-  }
-}
-
 export {
   calculateTotalEmission,
-  calculateSubcategoryEmission
 }

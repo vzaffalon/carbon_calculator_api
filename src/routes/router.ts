@@ -17,5 +17,4 @@
  */
 router.get("/categories/:id/subcategories", SubCategoriesController.index);
 router.get("/categories", CategoriesController.index);
-router.get("/subcategories/:id/calculate_emission", EmissionsController.calculateSubcategoryEmission);
 router.get("/calculate_total_emission", EmissionsController.calculateTotalEmission);
