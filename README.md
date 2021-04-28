@@ -26,7 +26,7 @@ For the purpose of simplification the projects uses a in memory database created
 
 - Travel:
     -  Subcategories:
-        -  Vehicle : distance (km/yr) /*EF (kg CO2e/km) = emissions (kg CO2e/yr)
+        -  Vehicle : distance (km/yr) * EF (kg CO2e/km) = emissions (kg CO2e/yr)
         -  Bus : distance (km/yr) * EF (kg CO2e/km) = emissions (kg CO2e/yr)
         -  Metro: distance (km/yr) * EF (kg CO2e/km) = emissions (kg CO2e/yr)
         -  Taxi: distance (km/yr) * EF (kg CO2e/km) = emissions (kg CO2e/yr)

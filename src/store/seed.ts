@@ -19,13 +19,19 @@ let categories: Categories = [
     },
  ];
 
+ //1 pound / megawatt hour = 0.00045359237 kilograms / kilowatt hour
+ const EnergyKgConverter = 0.00045359237
+ const btuThermesConverter = 0.0000100024 
+ const gallonToLiterConverter = 3.78541
+ const mileToKm = 1.60934;
+
  let subcategories: SubCategories = [
     {
       id: 1,
       name: "Electricity",
       use: 0,
       use_measure: "kWh/yr",
-      ef: 0.7,
+      ef: 947.2 * EnergyKgConverter,
       ef_measure: "kg CO2e/kWh",
       category_id: 1
     },
@@ -34,7 +40,7 @@ let categories: Categories = [
      name: "Natural Gas",
      use: 0,
      use_measure: "therms/yr",
-     ef: 0.7,
+     ef: 53.06 * btuThermesConverter,
      ef_measure: "kg CO2e/therms",
      category_id: 1
    },
@@ -43,7 +49,7 @@ let categories: Categories = [
      name: "Fuel Oil",
      use: 0,
      use_measure: "litres/yr",
-     ef: 0.7,
+     ef: 11.91 * gallonToLiterConverter,
      ef_measure: "kg CO2e/litre",
      category_id: 1
    },
@@ -52,7 +58,7 @@ let categories: Categories = [
      name: "LPG",
      use: 0,
      use_measure: "litres/yr",
-     ef: 0.7,
+     ef: 5.68 * gallonToLiterConverter,
      ef_measure: "kg CO2e/litre",
      category_id: 1
    },
@@ -61,7 +67,7 @@ let categories: Categories = [
      name: "Waste",
      use: 0,
      use_measure: "kg/week",
-     ef: 0.7 * 52,
+     ef: 0.81 * 52,
      ef_measure: "kg CO2e/kg",
      category_id: 1
    },
@@ -70,7 +76,7 @@ let categories: Categories = [
      name: "Water",
      use: 0,
      use_measure: "kg CO2e/kWh",
-     ef: 0.7 * 365,
+     ef: 0.010 * 365,
      ef_measure: "kg CO2e/kg",
      category_id: 1
    },
@@ -79,7 +85,7 @@ let categories: Categories = [
      name: "Vehicle",
      use: 0,
      use_measure: "km/yr",
-     ef: 50,
+     ef: 0.053/mileToKm,
      ef_measure: "kg CO2e/km",
      category_id: 2
    },
@@ -88,7 +94,7 @@ let categories: Categories = [
      name: "Bus",
      use: 0,
      use_measure: "km/yr",
-     ef: 50,
+     ef: 0.063/mileToKm,
      ef_measure: "kg CO2e/km",
      category_id: 2
    },
@@ -97,7 +103,7 @@ let categories: Categories = [
      name: "Metro",
      use: 0,
      use_measure: "km/yr",
-     ef: 50,
+     ef: 0.023/mileToKm,
      ef_measure: "kg CO2e/km",
      category_id: 2
    },
@@ -106,7 +112,7 @@ let categories: Categories = [
      name: "Taxi",
      use: 0,
      use_measure: "km/yr",
-     ef: 50,
+     ef: 0.053/mileToKm,
      ef_measure: "kg CO2e/km",
      category_id: 2
    },
@@ -115,7 +121,7 @@ let categories: Categories = [
      name: "Rail",
      use: 0,
      use_measure: "km/yr",
-     ef: 50,
+     ef: 0.013/mileToKm,
      ef_measure: "kg CO2e/km",
      category_id: 2
    },
@@ -124,7 +130,7 @@ let categories: Categories = [
      name: "Flying",
      use: 0,
      use_measure: "km/yr",
-     ef: 50 * 1.09,
+     ef: 0.011/mileToKm * 1.09,
      ef_measure: "kg CO2e/km",
      category_id: 2
    },
@@ -133,7 +139,7 @@ let categories: Categories = [
      name: "Red Meat",
      use: 0,
      use_measure: "kCal/day",
-     ef: 365 * 1.09,
+     ef: 0.68 * 1.09,
      ef_measure: "kg CO2e/kCal",
      category_id: 3
    },
@@ -142,7 +148,7 @@ let categories: Categories = [
      name: "White meat",
      use: 0,
      use_measure: "kCal/day",
-     ef: 365 * 1.09,
+     ef: 0.74 * 1.09,
      ef_measure: "kg CO2e/kCal",
      category_id: 3
    },
@@ -151,7 +157,7 @@ let categories: Categories = [
      name: "Dairy",
      use: 0,
      use_measure: "kCal/day",
-     ef: 365 * 1.09,
+     ef: 0.48 * 1.09,
      ef_measure: "kg CO2e/kCal",
      category_id: 3
    },
@@ -160,7 +166,7 @@ let categories: Categories = [
      name: "Cereals",
      use: 0,
      use_measure: "kCal/day",
-     ef: 365 * 1.09,
+     ef: 0.54 * 1.09,
      ef_measure: "kg CO2e/kCal",
      category_id: 3
    },
@@ -169,7 +175,7 @@ let categories: Categories = [
      name: "Vegetables",
      use: 0,
      use_measure: "kCal/day",
-     ef: 365 * 1.09,
+     ef: 0.11 * 1.09,
      ef_measure: "kg CO2e/kCal",
      category_id: 3
    },
@@ -178,7 +184,7 @@ let categories: Categories = [
      name: "Fruit",
      use: 0,
      use_measure: "kCal/day",
-     ef: 365 * 1.09,
+     ef: 0.24 * 1.09,
      ef_measure: "kg CO2e/kCal",
      category_id: 3
    },
@@ -187,7 +193,7 @@ let categories: Categories = [
      name: "Oils",
      use: 0,
      use_measure: "kCal/day",
-     ef: 365 * 1.09,
+     ef: 0.47 * 1.09,
      ef_measure: "kg CO2e/kCal",
      category_id: 3
    },
@@ -196,7 +202,7 @@ let categories: Categories = [
      name: "Snacks",
      use: 0,
      use_measure: "kCal/day",
-     ef: 365 * 1.09,
+     ef: 0.89 * 1.09,
      ef_measure: "kg CO2e/kCal",
      category_id: 3
    },
@@ -205,7 +211,7 @@ let categories: Categories = [
      name: "Drinks",
      use: 0,
      use_measure: "kCal/day",
-     ef: 365 * 1.09,
+     ef: 0.68 * 1.09,
      ef_measure: "kg CO2e/kCal",
      category_id: 3
    },
