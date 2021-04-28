@@ -33,12 +33,9 @@ export const calculateEmissions = async (emissions: EmissionsCreation): Promise<
             total_emission: total_category_emission,
             total_emission_measure: "kg CO2e/yr"
         }
-        console.log("dentro")
-        console.log(last_category_emission)
     }))
 
-    console.log("fora")
-    console.log(last_category_emission)
+    total_emission = total_emission + total_category_emission
     category_emissions.push(last_category_emission)
 
     return {
