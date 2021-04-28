@@ -3,4 +3,4 @@ import CategoriesStore from "../store/categories.store";
 
  export const findAll = async (): Promise<Category[]> => CategoriesStore;
 
- export const find = async (id: number): Promise<Category> => CategoriesStore[id];
+ export const find = async (category_id: number): Promise<Category> => CategoriesStore.filter((category) => category.id === category_id)[0];

@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import { Request, Response } from "express";
 import * as CategoriesService from "../services/categories.service";
 import { Category } from "../interfaces/category/category.interface";
 

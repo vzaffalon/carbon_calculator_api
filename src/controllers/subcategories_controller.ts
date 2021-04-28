@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import { Request, Response } from "express";
 import * as SubCategoriesService from "../services/subcategories.service";
 import { SubCategory } from "../interfaces/subcategory/subcategory.interface";
 
