@@ -22,41 +22,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.router = void 0;
 /**
- * Required External Modules
+ * Required External Modules and Interfaces
  */
-const dotenv = __importStar(require("dotenv"));
 const express_1 = __importDefault(require("express"));
-const cors_1 = __importDefault(require("cors"));
-const helmet_1 = __importDefault(require("helmet"));
-const router_1 = require("./src/routes/router");
-const error_middleware_1 = require("./src/middleware/error.middleware");
-const not_found_middleware_1 = require("./src/middleware/not-found.middleware");
-dotenv.config();
+const CategoriesController = __importStar(require("../controllers/categories_controller"));
+const SubCategoriesController = __importStar(require("../controllers/subcategories_controller"));
+const EmissionsController = __importStar(require("../controllers/emissions_controller"));
 /**
- * App Variables
+ * Router Definition
  */
-if (!process.env.PORT) {
-    process.exit(1);
-}
-const PORT = parseInt(process.env.PORT, 10);
-const app = express_1.default();
-const startServer = (app) => {
-    /**
-   *  App Configuration
-   */
-    app.use(helmet_1.default());
-    app.use(cors_1.default());
-    app.use(express_1.default.json());
-    app.use("/api/", router_1.router);
-    app.use(error_middleware_1.errorHandler);
-    app.use(not_found_middleware_1.notFoundHandler);
-    /**
-     * Server Activation
-     */
-    app.listen(PORT, () => {
-        console.log(`Listening on port ${PORT}`);
-    });
-};
-startServer(app);
-exports.default = startServer;
+exports.router = express_1.default.Router();
+/**
+ * Controller Definitions
+ */
+exports.router.get("/categories/:id/subcategories", SubCategoriesController.index);
+exports.router.get("/categories", CategoriesController.index);
+exports.router.post("/calculate_total_emission", EmissionsController.calculateTotalEmission);
