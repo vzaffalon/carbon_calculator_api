@@ -5,7 +5,7 @@ Carbon footprint Calculator that calculates the yearly total emissions of a pers
 
 This api runs on docker with NodeJS and Express.
 
-For the purpose of simplification the projects uses a in memory database created on the store folder.
+For the purpose of simplification the project uses a in memory database created on the store folder.
 
 ### Model description
 
