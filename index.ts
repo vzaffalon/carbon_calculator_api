@@ -8,7 +8,7 @@ import helmet from "helmet";
 import { router } from "./src/routes/router";
 import { errorHandler } from "./src/middleware/error.middleware";
 import { notFoundHandler } from "./src/middleware/not-found.middleware";
- 
+
 dotenv.config();
 
 /**
@@ -22,20 +22,26 @@ const PORT: number = parseInt(process.env.PORT as string, 10);
 
 const app = express();
 
-/**
+const startServer = (app: any) => {
+  /**
  *  App Configuration
  */
-app.use(helmet());
-app.use(cors());
-app.use(express.json());
-app.use("/api/", router);
-app.use(errorHandler);
-app.use(notFoundHandler);
+  app.use(helmet());
+  app.use(cors());
+  app.use(express.json());
+  app.use("/api/", router);
+  app.use(errorHandler);
+  app.use(notFoundHandler);
 
 
-/**
- * Server Activation
- */
- app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
-});
+  /**
+   * Server Activation
+   */
+  app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
+  });
+}
+
+startServer(app)
+
+export default startServer
