@@ -3,7 +3,7 @@
 ### Description
 Carbon footprint Calculator that calculates the yearly total emissions of a person.
 
-This api runs on docker with NodeJS and Express.
+This api runs with NodeJS and Express.
 
 For the purpose of simplification the project uses a in memory database created on the store folder.
 
@@ -50,21 +50,12 @@ Reference: http://shrinkthatfootprint.com/calculate-your-carbon-footprint
 Emission Factors used: https://www.epa.gov/sites/production/files/2020-04/documents/ghg-emission-factors-hub.pdf
 
 ### Executing the project:
-Build the container images
 ```
-$ docker-compose build
-```
-
-Start running the containers
-```
-$ docker-compose up -d
+$ Yarn install
 ```
 
-The service will run on port 8000.
-
-Stoping services
 ```
-$ docker-compose down
+$ Yarn start
 ```
 
 ### List categories:
