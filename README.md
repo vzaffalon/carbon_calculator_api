@@ -51,11 +51,11 @@ Emission Factors used: https://www.epa.gov/sites/production/files/2020-04/docume
 
 ### Executing the project:
 ```
-$ Yarn install
+$ yarn install
 ```
 
 ```
-$ Yarn start
+$ yarn start
 ```
 
 ### List categories:
